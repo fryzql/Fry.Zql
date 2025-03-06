@@ -1,0 +1,788 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Quantico";
+  background-color: black;
+}
+
+/* navbar  */
+.NAVBAR {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 7%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom: 2px solid black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.NAVBAR .navbar-logo {
+  font-size: 3rem;
+  font-weight: 800;
+  color: black;
+}
+
+.NAVBAR .navbar-logo span {
+  background-color: black;
+  color: white;
+  padding-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.NAVBAR .navbar-nav a {
+  color: black;
+  font-size: 2rem;
+  margin: 1rem;
+  font-weight: 900;
+  padding: 0.5rem;
+  display: inline-block;
+}
+
+.NAVBAR .navbar-nav a:hover {
+  color: white;
+  background-color: black;
+  scale: 1.1;
+  border-radius: 10px;
+}
+
+.NAVBAR .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.2rem;
+  border-bottom: 0.3rem solid white;
+  transform: scaleX(0);
+}
+
+.NAVBAR .navbar-nav a:hover::after {
+  transform: scaleX(1);
+  transition: 0.3s;
+}
+
+/* langsung aja dipanggil idnya */
+#burger {
+  display: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: black;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+#burger:hover {
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+  scale: 1.1;
+}
+/* navbar end  */
+
+/* hero section start  */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url(../assets/img/bg/bgwhite.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgb(0, 0, 0) 10%,
+    rgba(255, 255, 255, 0) 50%
+  );
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 3.5rem;
+  color: black;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+  line-height: 1.2;
+  animation: h1 1s ease-out 1s 1 alternate both;
+}
+
+.hero .content h1 span {
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+  padding: 0 0.5rem;
+}
+
+.hero .content h2 {
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  color: black;
+  /* mix-blend-mode: difference; */
+  text-shadow: 1px 1px 3px grey;
+  line-height: 1.2;
+  animation: h1 1s ease-out 2s 1 alternate both;
+}
+
+.hero .content h2 span {
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+  padding: 0 0.5rem;
+}
+
+.hero .content p {
+  color: black;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  text-indent: 20px;
+  line-height: 1.2;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: fadeslide 1s ease-out 3s 1 alternate both;
+}
+
+.hero .content .sosmed {
+  align-items: center;
+  margin: 2.5rem;
+  display: flex;
+  animation: sosmed 1s ease-out 4s 1 alternate both;
+}
+
+.hero .content .sosmed .btnsos {
+  padding-top: 0.8rem;
+  padding-bottom: 0.4rem;
+  padding-right: 0.9rem;
+  padding-left: 0.9rem;
+  margin: 0.5rem;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: black;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.hero .content .sosmed .btnsos:hover {
+  color: white;
+  background: linear-gradient(135deg, rgb(255, 0, 0) 0%, rgb(255, 200, 0) 100%);
+  /* animation: sosmed 0.5s ease 0s alternate both; */
+  animation: btn 0.5s ease 0s 1 alternate both;
+}
+
+.hero .content .BTN {
+  animation: sosmed 2s ease-out 5s 1 alternate both;
+}
+
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 1rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: black;
+  font-family: "Quantico";
+  background-color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid black;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.hero .content .cta:hover {
+  color: white;
+  background-color: black;
+  border: 2px solid white;
+  animation: btn 0.5s ease 0s 1 alternate both;
+}
+
+/* hero saction end  */
+
+/* About section start  */
+
+.about,
+.skills,
+.contact {
+  padding: 10rem 7% 1.4rem;
+}
+
+.about h2,
+.skills h2,
+.contact h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: white;
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+.about h2 span {
+  color: black;
+}
+
+.skills h2 span {
+  color: black;
+}
+.contact h2 span {
+  color: black;
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 20rem;
+  position: relative;
+  animation: all 10s linear;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+.about .row .about-img img {
+  width: 100%;
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+  animation: all 3s linear;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+.about .row .content h3 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.about .row .content p {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+  line-height: 2;
+  color: white;
+  font-family: monospace;
+  text-indent: 20px;
+}
+
+/* SKILLS  */
+
+.skills p {
+  font-size: 1.5rem;
+  text-align: center;
+  color: white;
+}
+.myskills {
+  margin: auto;
+  color: black;
+  margin: 5rem;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 0 14px 20px rgba(255, 255, 255, 0.25),
+    0 10px 10px rgba(255, 255, 255, 0.22);
+  animation: all 3s linear;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+.myskills h1 {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2.5rem;
+}
+
+.myskills h1 span {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 0 0.5rem;
+}
+.myskills h3 {
+  font-size: 1.5rem;
+  margin-left: 2rem;
+}
+
+.myskills li {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.myskills .bar {
+  background: white;
+  display: block;
+  margin: 0 2rem;
+  height: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: end;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 0.1);
+}
+
+.myskills .bar:hover {
+  box-shadow: 10px 5px 20px rgba(255, 255, 255, 0.25),
+    0 10px 10px rgba(255, 255, 255, 0.22);
+}
+
+.myskills .bar span {
+  height: 20px;
+  float: left;
+  background: linear-gradient(135deg, rgb(255, 0, 0) 0%, rgb(255, 200, 0) 100%);
+}
+
+.html {
+  width: 80%;
+  animation: html 5s infinite;
+}
+.css {
+  width: 50%;
+  animation: css 5s infinite;
+}
+.js {
+  width: 15%;
+  animation: javascript 5s infinite;
+}
+
+/* CONTACT section start  */
+.contact p {
+  font-size: 1.5rem;
+  text-align: center;
+  color: white;
+}
+.contact .row {
+  display: flex;
+  margin: 2rem;
+  background-color: rgba(255, 255, 255);
+  border-radius: 50px;
+  border: 1px solid white;
+  animation: all 3s linear;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+.contact .row img {
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50px;
+  border: 1px solid white;
+}
+
+.contact .row form {
+  flex: 1 1 45rem;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.contact .row form label {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.contact .row form .input-group {
+  display: flex;
+  border-radius: 10px;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  padding-left: 2rem;
+}
+
+.contact .row form .input-group input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  background: none;
+  color: white;
+}
+
+.contact .row form .input-group textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  background: none;
+  color: white;
+}
+
+.contact .row form .btn {
+  margin-top: 2rem;
+  background-color: black;
+  padding: 1rem;
+  color: white;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.contact .row form .btn:active {
+  animation: clickEffect 1s ease;
+}
+
+.contact .row form .btn:hover {
+  color: white;
+  background: linear-gradient(135deg, rgb(255, 0, 0) 0%, rgb(255, 200, 0) 100%);
+  border: 2px solid black;
+}
+
+/* popup contact start  */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.popup {
+  background: white;
+  color: black;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 320px;
+  text-align: center;
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.popup h2 {
+  font-size: 2rem;
+}
+
+.popup h2 span {
+  color: #85a947;
+}
+
+.popup p {
+  font-size: 1.3rem;
+  font-family: monospace;
+}
+
+.close-popup {
+  margin-top: 15px;
+  padding: 10px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Class Aktif */
+.overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.overlay.active .popup {
+  transform: scale(1);
+}
+/* popup contact end  */
+
+/* footer start  */
+footer {
+  background-color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 3rem;
+  border-top: 1px solid black;
+}
+
+footer .brand {
+  font-size: 3rem;
+  font-weight: 800;
+  color: black;
+}
+
+footer .brand span {
+  background-color: black;
+  color: white;
+  padding-right: 0.5rem;
+  border-radius: 5px;
+}
+
+footer .social {
+  align-items: center;
+  margin: 2.5rem;
+  justify-content: center;
+  display: flex;
+}
+
+footer .social a {
+  padding-top: 0.8rem;
+  padding-bottom: 0.4rem;
+  padding-right: 0.8rem;
+  padding-left: 0.8rem;
+  margin: 0.5rem;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: black;
+  border: 2px solid rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+footer .social a:hover {
+  color: white;
+  animation: btn 0.5s ease 0s 1 alternate both;
+  background: linear-gradient(135deg, rgb(255, 0, 0) 0%, rgb(255, 200, 0) 100%);
+}
+
+footer .credit {
+  color: black;
+  font-size: 1.5rem;
+}
+
+/* KEYFRAME ANIMATION */
+
+/* ANIMATION BUTTON  */
+@keyframes btn {
+  from {
+    transform: translateY(0px);
+    scale: 1;
+  }
+  to {
+    transform: translateY(-5px);
+    scale: 1;
+  }
+}
+
+/* SCROLL ANIMATION */
+
+@keyframes all {
+  from {
+    opacity: 0;
+    scale: 0.4;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes clickEffect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* ANIMATION H1  */
+@keyframes h1 {
+  from {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* ANIMATION P  */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes fadeslide {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SKILLS BAR  */
+@keyframes html {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+@keyframes css {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+@keyframes javascript {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 15%;
+  }
+}
+
+/* SOSMED ANIMATION */
+@keyframes sosmed {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* MEDIA QUERYS */
+
+/* laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* tablet  */
+@media (max-width: 768px) {
+  html {
+    font-size: 65%;
+  }
+
+  .NAVBAR {
+    width: 100%;
+  }
+
+  .NAVBAR .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 30rem;
+    height: 100vh;
+    transition: 0.5s;
+    border-left: 3px solid darkgrey;
+  }
+
+  .NAVBAR .navbar-nav.active {
+    right: 0;
+  }
+
+  .NAVBAR .navbar-nav a {
+    display: block;
+    margin: 1.5rem;
+    color: black;
+    padding: 0.5rem;
+    font-size: 2rem;
+    margin-left: 2rem;
+  }
+
+  .NAVBAR .navbar-nav a:hover {
+    transform-origin: 0 0;
+  }
+
+  .NAVBAR .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .NAVBAR .navbar-nav a:hover::after {
+    transform: scaleX(1);
+  }
+
+  #burger {
+    display: inline-block;
+  }
+
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  .about .row .about-img img {
+    object-fit: cover;
+    animation: change 2s infinite alternate;
+  }
+
+  .about .row .content {
+    padding: 0;
+  }
+
+  .contact .row {
+    flex-wrap: wrap;
+  }
+  .contact .row form {
+    padding-top: 1rem;
+  }
+  .contact .row img {
+    height: 30rem;
+  }
+
+  .hero {
+    flex-wrap: wrap;
+  }
+}
+
+/* mobile  */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
